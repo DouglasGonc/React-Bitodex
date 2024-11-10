@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root{
+  --color-card-purple: #531977;
+  --color-title-blue: #181A99;
+  --color-text: #7C7B90;
+  --primary-gradient: linear-gradient(90deg, #4E0062 0%, #220076 100%);
+  --secondary-gradient: linear-gradient(90deg, #F45E6B 0%, #B7256D 100%);
+  --title-gradient: linear-gradient(90deg, #650084 0%, #240075 100%);
+  --color-1: #36006C;
+  --color-2: #E8E8E8;
+  --color-3: #FEFEFF;
+  --text-white: #ffffff;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+
+body{
+  background: var(--primary-gradient);
+}
+
+:is(h1){
+  color: var(--color-title-blue);
+  font-size: 51px;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+}
