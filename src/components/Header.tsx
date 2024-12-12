@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Logo from './Logo';
@@ -6,25 +6,31 @@ import LoginButton from '../layouts/Login-Button';
 import SocialMedia from '../layouts/Social-Media';
 import SearchIcon from '../assets/search-icon';
 
-const HeaderContainer = styled.header`
-    width: 1140px;
-    margin: 0 auto;
-
+const HeaderContainer = styled.header<{ isScrolled: boolean }>`
     position: relative;
-
+    
     section{
         position: fixed;
+
+        background: ${({ isScrolled }) => isScrolled ? 'var(--primary-gradient)' : 'transparent'};
+        transition: all 2s ease-in-out;
+
+        width: 100%;
+        height: 90px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
-`;
+    `;
 
 const HeaderFlex = styled.div`
     width: 1140px;
+    margin: 0 auto;
     height: 40px;
 
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-
-    margin: 25px 0 0 0;
 
     div:first-child{
         display: flex;
@@ -60,8 +66,19 @@ const StyledLink = styled(Link)`
 `;
 
 const Header: React.FC = () => {
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 100);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
     return (
-        <HeaderContainer>
+        <HeaderContainer isScrolled={isScrolled}>
             <section>
                 <HeaderFlex>
                     <div>
