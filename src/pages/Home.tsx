@@ -1,13 +1,12 @@
-import styled from "styled-components";
-
-const Banner = styled.main`
-    height: 860px;
-`;
+import Banner from "../layouts/Banner-home";
+import Comofunciona from "../layouts/Section-Works";
 
 const Home: React.FC = () => {
     return (
         <>
-            <Banner>HOME</Banner>
+            <Banner/>
+
+            <Comofunciona/>
         </>
     );
 };
