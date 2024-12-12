@@ -7,7 +7,7 @@ import { ArrowRightCircleIcon } from '../assets/arrow-right-circle-icon';
 
 const Container = styled.section`
     max-width: 1140px;
-    margin: 300px auto 150px auto;
+    margin: 150px auto 150px auto;
     text-align: center;
 
     display: flex;
@@ -30,13 +30,13 @@ const ContainerGrid = styled.div`
     }
     .center{
         background: var(--primary-gradient);
-        h2, p, a, svg{
+        h3, p, a, svg{
             color: var(--text-white);
         }
     }
 `;
 
-const Title = styled.h2`
+const Title = styled.h3`
     font-weight: bold;
     margin-top: 20px;
 `;

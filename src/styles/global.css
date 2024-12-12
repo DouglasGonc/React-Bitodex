@@ -30,6 +30,12 @@ body{
   color: var(--color-title-blue);
 }
 :is(h2){
+  font-size: 34px;
+  font-family: 'Roboto', sans-serif;
+  color: var(--color-title-blue);
+  line-height: 160%;
+}
+:is(h3){
   font-size: 22px;
   font-family: 'Roboto', sans-serif;
   color: var(--color-title-blue);
